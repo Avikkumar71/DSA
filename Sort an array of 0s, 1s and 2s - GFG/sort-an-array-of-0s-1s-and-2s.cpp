@@ -10,43 +10,43 @@ class Solution
     public:
     void sort012(int a[], int n)
     {
-        int arr[n];
-       
-       int count0 = 0;
-       int count1 = 0;
-       int count2 = 0;
-       
-       for( int i=0; i<n; i++){
-           if( a[i] == 0){
-               count0++;
-           }
-           
-           else if( a[i] == 1){
-               count1++;
-           }
-           
-           else{
-               count2++;
-           }
-       }
-       
-       int i=0;
-       
-       while( i < count0){
-           a[i] = 0;
-           i++;
-       }
-       
-       while( i < count1 + count0){
-           a[i] = 1;
-           i++;
-       }
-       
-       while( i <= count2 + count1 + count0){
-           a[i] = 2;
-           i++;
-       }
+        // code here 
+        int count0 = 0;
+        int count1 = 0;
+        int count2 = 0;
+        
+        for( int i=0; i<n; i++){
+            
+            if( a[i] == 0){
+                count0++;
+            }
+            else if( a[i] == 1){
+                count1++;
+            }
+            else{
+                count2++;
+            }
+        }
+        
+        a[n] = 0;
+        int i=0;
+        
+        while( i < count0){
+            a[i] = 0;
+            i++;
+        }
+        
+        while( i < count0 + count1){
+            a[i] = 1;
+            i++;
+        }
+        
+        while( i < count0 + count1 + count2){
+            a[i] = 2;
+            i++;
+        }
     }
+    
 };
 
 //{ Driver Code Starts.
