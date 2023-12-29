@@ -11,10 +11,9 @@ public:
                 stc.push(ch);
             }
             else{
-                if(!stc.empty() ){
+                if( !stc.empty() ){
                     char top = stc.top();
-                    if( (ch == ')' && top == '(') || (ch == ']' && top == '[') ||
-                       (ch == '}' && top == '{') ){
+                    if( (ch == ')' && top == '(') || (ch == ']' && top == '[') || (ch == '}' && top == '{')){
                         stc.pop();
                     }
                     else{
@@ -26,7 +25,6 @@ public:
                 }
             }
         }
-        
         if(stc.empty()){
             return true;
         }
